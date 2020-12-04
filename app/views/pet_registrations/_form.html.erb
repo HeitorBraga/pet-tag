@@ -1,0 +1,17 @@
+<%= simple_form_for(@pet_registration) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_setence if f.object.errors[:base].present? %>
+    
+  <div class="form-inputs">
+    <%= f.input :name, label: "Nome" %>
+    <%= f.input :kind, label: "Tipo" %>
+    <%= f.input :breed, label: "Raça" %>
+    <%= f.input :birthdate, as: :string, input_html: {class: "birthdate" }, label: "Data de Nascimento" %>
+    <%= f.file_field :photografy, class: "mb-2", required: true %>
+    <p><%= f.association :person, label: "Dono" %></p>  
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "is-fullwidth is-info mt-6" %>
+  </div>
+<% end %>

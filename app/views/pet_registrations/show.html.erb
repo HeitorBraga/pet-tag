@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p class='title has-text-centered'>
+<%= @pet_registration.name %>
+</p>
+
+<div class='columns'>
+  <div class='column'>
+
+  </div>
+
+  <div class='column has-text-right'>
+
+    <%= image_tag @pet_registration.photografy, width: 200, heigth: 400, style: "border" %>
+
+    <p><%= link_to 'Voltar', pet_registrations_path, class: 'button is-info mt-3' %> 
+
+  </div>
+
+  <div class='column has-text-left'>
+
+    <p><h2>
+        <strong>Nome:</strong>
+        <%= @pet_registration.name %>
+      </p></h2>
+
+    <p><h2>
+      <strong>Dono:</strong>
+      <%= link_to @pet_registration.person.name, person_url(@pet_registration.person)  %>
+    </p></h2>
+
+  
+    <p><h2>
+      <strong>Tipo:</strong>
+      <%= @pet_registration.kind %>
+    </p></h2>
+
+    <p><h2>
+      <strong>Raça:</strong>
+      <%= @pet_registration.breed %>
+    </p></h2>
+
+    <p><h2>
+      <strong>Aniversário:</strong>
+      <%= @pet_registration.birthdate %>
+    </p></h2>
+
+    <%= link_to 'Editar', edit_pet_registration_path(@pet_registration), class: 'button is-info mt-5' %> 
+  </div>
+
+  <div class='column'>
+
+  </div>
+</div>

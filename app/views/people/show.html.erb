@@ -1,0 +1,86 @@
+<p id="notice"><%= notice %></p>
+
+<p class='title has-text-centered mb-5'>
+<%= @person.name %>
+</p>
+
+<div class='columns'>
+  <div class='column'>
+
+  </div>
+
+  <div class='column has-text-right'>
+
+  <p><h2>
+    <strong>Dono:</strong>
+    <%=  @person.name %>
+  </p></h2>
+
+  </div>
+
+  <div class='column has-text-left'>
+    <p><h2>
+      <strong>Telefone:</strong>
+      <%= @person.telephone %>
+    </p></h2>
+  </div>
+
+  <div class='column'>
+
+  </div>
+</div>
+
+<div class='columns'>
+  <div class='column'>
+
+  </div>
+
+  <div class='column has-text-centered'>
+
+    <h2 class='title'>Endereço</h2>
+
+    <p><h2>
+    <strong>Bairro:</strong>
+    <%= @person.district %>
+    </p></h2>
+
+    <p><h2>
+      <strong>Cep:</strong>
+      <%= @person.zip %>
+    </p></h2>
+
+    <p><h2>
+      <strong>Cidade:</strong>
+      <%= @person.city %>
+    </p></h2>
+
+    <p><h2>
+      <strong>Endereço:</strong>
+      <%= @person.address %>
+    </p></h2>
+
+    <p><h2>
+      <strong>Número:</strong>
+      <%= @person.number %>
+    </p></h2>
+
+    <p><h2>
+      <strong>Complemento:</strong>
+      <%= @person.complement %>
+    </p></h2>
+
+    <p>
+      <%= link_to 'Editar', edit_person_path(@person), class: "button mt-3 is-info pl-5 pr-5" %>
+      <%= link_to 'Voltar', people_path, class: "button mt-3 is-info pl-5 pr-5" %>   
+    </p>
+
+  </div>
+
+  <div class='column'>
+
+  </div>
+</div
+
+
+
+
