@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class='title has-text-centered'>Pets</h1>
+<h1 class="title has-text-centered">Pets</h1>
 
-<table class='mt-6'>
+<table class="mt-6 table is-fullwidth">
   <thead>
-    <tr class='table has-text-centered'>
+    <tr class="has-text-centered">
+      <th>Code</th>
       <th>Nome</th>
       <th>Tipo</th>
       <th>Raça</th>
@@ -17,15 +18,16 @@
 
   <tbody>
     <% @pet_registrations.each do |pet_registration| %>
-      <tr class='table has-text-centered'>
+      <tr class="table has-text-centered">
+        <td><%= pet_registration.code %></td>
         <td><%= pet_registration.name %></td>
         <td><%= pet_registration.kind %></td>
         <td><%= pet_registration.breed %></td>
         <td><%= pet_registration.birthdate %></td>
         <td><%= pet_registration.person.name %></td>
-        <td><%= link_to 'Mostrar', pet_registration, class: "button is-info" %></td>
-        <td><%= link_to 'Editar', edit_pet_registration_path(pet_registration), class: "button is-info" %></td>
-        <td><%= link_to 'Exculir', pet_registration, method: :delete, data: { confirm: 'Tem certeza?' }, class: "button is-info" %></td>
+        <td><%= link_to "Mostrar", pet_registration, class: "button is-info" %></td>
+        <td><%= link_to "Editar", edit_pet_registration_path(pet_registration), class: "button is-info" %></td>
+        <td><%= link_to "Exculir", pet_registration, method: :delete, data: { confirm: "Tem certeza?" }, class: "button is-info" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,4 +35,4 @@
 
 <br>
 
-<%= link_to 'Cadastrar Pet', new_pet_registration_path, class: "button is-info is-fullwidth" %>
+<%= link_to "Cadastrar Pet", new_pet_registration_path, class: "button is-info is-fullwidth" %>
