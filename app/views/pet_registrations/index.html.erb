@@ -28,7 +28,6 @@
             <td><%= pet_registration.breed %></td>
             <td><%= pet_registration.birthdate %></td>
             <td><%= pet_registration.person.name %></td>
-            <td><%= link_to "Mostrar", pet_registration, class: "button is-info" %></td>
             <td><%= link_to "Editar", edit_pet_registration_path(pet_registration), class: "button is-info" %></td>
             <td><%= link_to "Exculir", pet_registration, method: :delete, data: { confirm: "Tem certeza?" }, class: "button is-info" %></td>
           </tr>
