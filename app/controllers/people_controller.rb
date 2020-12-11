@@ -35,7 +35,7 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       if @person.save
-        format.html { redirect_to @person, notice: 'Dono criado com sucesso.' }
+        format.html { redirect_to people_url, notice: 'Dono criado com sucesso.' }
         format.json { render :show, status: :created, location: @person }
       else
         format.html { render :new }
@@ -76,7 +76,7 @@ class PeopleController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def person_params
-      params.require(:person).permit(:name, :telephone, :address, :number, :complement, :district, :zip, :city)
+      params.require(:person).permit(:name, :email, :password, :password_confirmation, :telephone, :address, :number, :complement, :district, :zip, :city)
     end
 
     def first_name
