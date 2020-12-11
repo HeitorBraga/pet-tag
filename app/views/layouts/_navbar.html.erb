@@ -15,9 +15,9 @@
                 Home
               </a>
         
-              <a class="navbar-item mr-2 ml-2" href="/people">
+              <%= link_to people_url, class: "navbar-item mr-2 ml-2" do %>
                 Dono
-              </a>
+              <% end %>
 
               <%= link_to pet_registrations_url, class: "navbar-item mr-2 ml-2" do %>
                 Pet
