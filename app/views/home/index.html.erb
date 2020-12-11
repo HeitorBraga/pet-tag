@@ -5,7 +5,11 @@
     <%= image_tag "dog.png", width: 400, class: "mr-6" %>
   </div>
   <div class='column has-text-left'>
-    <h1 class='title'>Fazer cadastro</h1> 
-    <button class='button is-info is-medium pr-6 pl-6 mt-6 has-text-centered'>Fazer Cadastro</button>
+    <% if person_signed_in? %>
+      
+    <% else %>
+      <h1 class="title">Cadastrar-se</h1>
+      <%= link_to "Fazer cadastro", "people/sign_up", class: "button is-info is-medium pr-5 pl-5 mt-6" %>
+    <% end %>
   </div>
 </div>

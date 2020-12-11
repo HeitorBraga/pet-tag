@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
+  skip_before_action :authenticate_person!, only: [:index]
   def index
-    render layout: "home_layout"
   end
 end

@@ -13,28 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
-td, th {
-  padding: .7em;
-  margin: 0;
-  text-align: center;
-}
-
-td {
-  font-weight: bold;
-}
-
-table {
-  width: 100%;
-  margin-bottom: .5em;
-  table-layout: fixed;
-  text-align: center;
-}
-
-background-is-info{
-  background-color: #3298dc;
-}
-
 div.control.select {
   height: 72px;
 }

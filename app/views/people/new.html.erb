@@ -1,5 +1,10 @@
-<h1 class='title has-text-centered'>New Person</h1>
+<section class="section">
+  <div class="container">
 
-<%= render 'form', person: @person %>
+    <h1 class="title has-text-centered">Cadastrar-se</h1>
 
-<%= link_to 'Voltar', people_path, class: "button is-fullwidth is-info mt-3" %>
+    <%= render "form", person: @person %>
+
+    <%= link_to "Voltar", people_path, class: "button is-fullwidth is-info mt-3" %>
+  </div>
+</section>

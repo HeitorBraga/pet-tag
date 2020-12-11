@@ -1,5 +1,9 @@
-<h1 class='title has-text-centered'>Novo Pet</h1>
+<section class="section">
+  <div class="container">
+    <h1 class="title has-text-centered">Cadastrar seu Amiguinho</h1>
 
-<%= render 'form', pet_registration: @pet_registration %>
+    <%= render "form", pet_registration: @pet_registration %>
 
-<%= link_to 'Voltar', pet_registrations_path, class: "button is-info is-fullwidth mt-3" %>
+    <%= link_to "Voltar", pet_registrations_path, class: "button is-info is-fullwidth mt-3" %>
+  </div>
+</section>

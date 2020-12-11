@@ -1,4 +1,5 @@
 class PeopleController < ApplicationController
+  skip_before_action :authenticate_person!, only: [:new, :create]
   before_action :set_person, only: [:show, :edit, :update, :destroy]
 
   # GET /people
@@ -10,6 +11,12 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.json
   def show
+  end
+
+  def profile
+    @person = current_person
+
+    render :show
   end
 
   # GET /people/new
@@ -72,5 +79,8 @@ class PeopleController < ApplicationController
       params.require(:person).permit(:name, :telephone, :address, :number, :complement, :district, :zip, :city)
     end
 
+    def first_name
+      @name = current_person.split
+    end
   end
 

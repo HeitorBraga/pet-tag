@@ -1,6 +1,10 @@
-<h1 class='title has-text-centered'>Editar Dono</h1>
+<section class="section">
+  <div class="container">
+    <h1 class="title has-text-centered">Editar Dono</h1>
 
-<p class='has-text-centered'><%= render 'form', person: @person %></p>
+    <p class="has-text-centered"><%= render "form", person: @person %></p>
 
-<%= link_to 'Mostrar', @person, class: 'button is-info is-fullwidth mt-3' %>
-<%= link_to 'Voltar', people_path, class: 'button is-info is-fullwidth mt-3' %>
+    <%= link_to "Mostrar", @person, class: "button is-info is-fullwidth mt-3" %>
+    <%= link_to "Voltar", people_path, class: "button is-info is-fullwidth mt-3" %>
+  </div>
+</section>

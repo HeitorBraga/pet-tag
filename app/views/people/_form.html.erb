@@ -1,9 +1,12 @@
-<%= simple_form_for(@person) do |f| %>
+<%= simple_form_for(@person, url: people_path) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
     <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
     <%= f.input :telephone, as: :string, input_html: { class: "phone" } %>
     <%= f.input :address %>
     <%= f.input :number %>

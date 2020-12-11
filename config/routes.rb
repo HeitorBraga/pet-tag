@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  root to: "home#index"
+
+  devise_for :people
   resources :people
   resources :pet_registrations
-  get 'pet', to: 'pet_registrations#index'
-  get '', to: 'home#index'
-  get 'home', to: 'home#index'
+
+  get '/perfil' => 'people#profile', as: :person_profile
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
