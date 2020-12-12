@@ -30,9 +30,9 @@
             <td><%= person.district %></td>
             <td><%= person.zip %></td>
             <td><%= person.city %></td>
-            <td><%= link_to "Mostrar", person, class: "button is-info" %></td>
+            <td><%= link_to "Mostrar", person_profile_url, class: "button is-info" %></td>
             <td><%= link_to "Editar", edit_person_path(person), class: "button is-info" %></td>
-            <td><%= link_to "Excluir", person, method: :delete, data: { confirm: "Tem certeza?" }, class: "button is-info" %></td>
+            <td><%= link_to "Excluir", person_registration_path(person), method: :delete, data: { confirm: "Tem certeza?" }, class: "button is-info" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -40,6 +40,6 @@
 
     <br>
 
-    <%= link_to "Cadastrar Dono", new_person_path, class: "button is-fullwidth is-info" %>
+    <%= link_to "Cadastrar Dono", new_person_registration_url, class: "button is-fullwidth is-info" %>
   </div>
 </section>
