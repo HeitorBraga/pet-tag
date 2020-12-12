@@ -6,6 +6,8 @@ class PetRegistration < ApplicationRecord
 
   validates :name, :kind, :breed, :birthdate, :photografy, :person, presence: true
 
+  enum kind: { dog: 0, cat: 1, rabbit: 2 }
+
   before_save do
     if code.blank?
       begin
