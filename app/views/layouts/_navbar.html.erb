@@ -11,23 +11,15 @@
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
             <% if person_signed_in? %>
-              <a class="navbar-item mr-2 ml-2" href="/">
-                Home
-              </a>
+              <%= link_to "Home", root_url, class: 'navbar-item mr-2 ml-2' %>
         
-              <a class="navbar-item mr-2 ml-2" href="/people">
-                Dono
-              </a>
+              <%= link_to "Dono", people_url, class: "navbar-item mr-2 ml-2" %>
 
-              <%= link_to pet_registrations_url, class: "navbar-item mr-2 ml-2" do %>
-                Pet
-              <% end %>
+              <%= link_to "Pet", pet_registrations_url, class: "navbar-item mr-2 ml-2" %>
 
-              <% else %>
-                <a class="navbar-item mr-2 ml-2" href="/">
-                  Home
-                </a>
-              <% end %>
+            <% else %>
+              <%= link_to "Home", root_url, class: 'navbar-item mr-2 ml-2' %>
+            <% end %>
           </div>
         </div>
 
@@ -35,7 +27,7 @@
             <div class="navbar-item">
               <div class="buttons">
                 <% if person_signed_in? %>
-                  
+  
                 <% else %>
                   <%= link_to "Entrar", new_person_session_path, class: "has-text-white mr-4" %>
                   <%= link_to "cadastrar-se", new_person_registration_path, class: "button" %>
@@ -47,12 +39,9 @@
                       <%= current_person.first_name if current_person.present?  %>
                     </a>
                     <div class="navbar-dropdown">
-                      <%= link_to person_profile_url, class: 'navbar-item' do %>
-                        Perfil
-                      <% end %>
-                      <a class="navbar-item">
+                      <%= link_to 'perfil', person_profile_url, class: 'navbar-item' %>
                       
-                      </a>
+                      <%# link_to 'Editar Perfil', , class: "navbar-item" %>
                       <hr class="navbar-divider">
                         <%# link_to "Editar Perfil", , class: "navbar-item" %>
                         <%= link_to "Sair", destroy_person_session_path, method: :delete, class: "navbar-item" %>
@@ -62,8 +51,8 @@
               </div>
             <div>
           </div>
-
+        </div>
       </nav> 
     </div>
-  </div>
+  </div >
 </html>
