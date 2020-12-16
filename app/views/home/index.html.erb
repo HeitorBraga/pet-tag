@@ -1,15 +1,89 @@
-<h1 class='title has-text-centered'>Pet Tag</h1>
+<h1 class="title has-text-centered">Pet Tag</h1>
 
-<div class='columns'>
-  <div class='column ml-0 has-text-centered home-background is-two-thirds pb-6 pt-6'>
-    <%= image_tag "dog.png", width: 400, class: "mr-6" %>
-  </div>
-  <div class='column has-text-left'>
-    <% if person_signed_in? %>
-      
-    <% else %>
-      <h1 class="title">Cadastrar-se</h1>
-      <%= link_to "Fazer cadastro", new_person_registration_path, class: "button is-info is-medium pr-5 pl-5 mt-6" %>
-    <% end %>
+<div class="columns">
+  <div class="column ml-0 has-text-centered home-background is-two-thirds pb-6 pt-6 mb-6">
+    <%= image_tag "dog.png", width: 400, class: "mr-0" %>
   </div>
 </div>
+
+<section class="section">
+  <div class="container">
+      <h1 class="title has-text-centered mt-6">Como funciona?</h1>
+      <h3 class="has-text-centered mb-5 ">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed quis venenatis purus. 
+        Cras at mi porta, mattis quam a, auctor tortor. 
+        Quisque posuere viverra erat in facilisis. 
+        Phasellus id iaculis est. 
+        Nam suscipit metus ac urna viverra malesuada. 
+        Sed non nulla ut velit tincidunt rutrum. 
+        Sed condimentum rutrum augue ut porta. 
+        Vivamus nec nibh at lectus tempus accumsan. 
+        Nunc vel risus ut ex bibendum bibendum quis sed elit. 
+        Nulla id hendrerit purus. Suspendisse ac efficitur ligula. 
+        Aenean quam ipsum, cursus vitae tristique vitae, facilisis rutrum metus. 
+        Aliquam commodo volutpat ante, non bibendum justo viverra eu. 
+        Etiam purus eros, consectetur et egestas ornare, luctus id erat. 
+      </h3>
+  </div>
+</section>
+
+<div class="modal" id="cart">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <!-- Any other Bulma elements you want -->
+  </div>
+  <button class="modal-close is-large" aria-label="close" onClick="toggleCartDlg()"></button>
+</div>
+
+<section class="section">
+  <div class="container">
+    <h1 class=" title has-text-centered mt-6">Produtos</h1>
+    <h1 class="title has-text-centered mt-6">Tags</h1>
+    <div class="columns">
+      <div class="column mr-6">
+        <h3 class="has-text-centered">TAG NAME</h3>
+        <%= image_tag "tag.jpg" %>
+      </div>
+      <div class="column ml-6">
+        <h3 class="has-text-centered">TAG NAME</h3>
+        <%= image_tag "tag.jpg" %>
+      </div>
+    </div>
+    <%= link_to "Encomendar TAG", root_url, class: "button is-info is-fullwidth is-medium mt-4" %>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title has-text-centered mt-5 mb-6">Coleiras</h1>
+    <div class="columns">
+      <div class="column mt-5">
+        <h3 class="has-text-centered">COLLAR NAME</h3>
+        <%= image_tag "collar1.png", class: "mt-6" %>
+      </div>
+      <div class="column mt-5">
+        <h3 class="has-text-centered">COLLAR NAME</h3>
+        <%= image_tag "collar2.png", class: "mt-6" %>
+      </div>
+      <div class="column mt-5">
+        <h3 class="has-text-centered">COLLAR NAME</h3>
+        <%= image_tag "collar3.webp", class: "mt-6" %>
+      </div>
+    </div>
+    <%= link_to "Encomendar Coleira", root_url, class: "button is-info is-fullwidth is-medium mt-4" %>
+  </div>
+</section>
+
+<% if person_signed_in? %>
+
+<% else %>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered mt-6">Fazer cadastro</h1>
+      <p class="has-text-centered">
+        <%= link_to "Fazer cadastro", new_person_registration_url, class: "button is-medium is-info mt-4 pl-6 pr-6" %> 
+      </p>
+    </div>
+  </section>
+<% end %>
