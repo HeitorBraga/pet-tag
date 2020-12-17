@@ -20,10 +20,10 @@ pt-BR:
         telephone: Telefone
         address: Endereço
         number: Número
-        Complement: Complemento
-        District: Bairro
-        Zip: Cep
-        City: Cidade
+        complement: Complemento
+        district: Bairro
+        zip: Cep
+        city: Cidade
       pet_registration:
         name: Nome
         kind: Tipo
@@ -31,3 +31,5 @@ pt-BR:
         birthdate: Nascimento
         person: Dono
         photografy: Foto
+      PetRegistration:
+        dog: Cachorro

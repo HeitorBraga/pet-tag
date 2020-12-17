@@ -12,25 +12,81 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
-div.control.select {
+
+.logo {
+  margin-top: 26px;
+  margin-left: 26px;
+  margin-right: 8px;
+  padding-right: 12px;
+}
+
+div.control.select   {
   height: 72px;
 }
-.select2.select2-container {
+.select2.select2-container   {
   width: 100% !important;
 }
 
-
-/* div.triangulo{
-  width: 0px;
-  height: 0px;
-  border: 491px solid;
-  border-bottom: 0;
-  border-color: #3298dc transparent transparent #3298dc;
-}
-*/
-.home-background{
+.home-background  {
   margin-right: 0;
   background-image: url("home_background.png");
   background-repeat: no-repeat;
+}
+
+thead th  {
+  background: rgb(255, 255, 255);
+}
+
+tbody tr  {
+  background: rgb(255, 255, 255);
+}
+
+tr:hover .table-button   {
+  display: inline-block !important;
+  background-color: transparent;
+}
+
+.table-button   {
+  display: none !important;
+  font-size: 18px;
+  padding: 0px 10px;
+}
+
+.profile-button {
+  margin-top: 10px;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.profile-button:hover  {
+  background-color: transparent !important;
+}
+
+.servico-button  {
+  width: 16.5rem !important; 
+  margin-top: 5rem;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+.background-isinfo {
+  background-color: #2793da;
+}
+
+.table-links:hover {
+  background-color: transparent !important;
+}
+
+.cart-button:hover {
+  background-color: transparent !important;
+}
+
+.guard {
+  display: none;
+}
+
+.profile-photo {
+  margin-left: 60px;
 }

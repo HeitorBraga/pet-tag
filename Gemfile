@@ -67,4 +67,4 @@ gem "google-cloud-storage", "~> 1.11", require: false
 gem 'image_processing'
 gem 'jquery_mask_rails', '~> 0.1.0'
 gem 'devise'
-
+gem "font-awesome-rails"

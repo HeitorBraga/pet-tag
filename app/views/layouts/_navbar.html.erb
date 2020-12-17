@@ -5,7 +5,7 @@
     <div class="column">    
       <nav class="navbar is-info" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <b class="logo ml-4" style="margin-top: 21px;">Pet Tag | ADMIN  </b>
+          <b class="logo">Pet Tag </b>
         </div>
           
         <div id="navbarBasicExample" class="navbar-menu">
@@ -27,15 +27,8 @@
             <div class="navbar-item">
               <div class="buttons">
                 <% if person_signed_in? %>
-  
-                <% else %>
-                  <%= link_to "Entrar", new_person_session_path, class: "has-text-white mr-4" %>
-                  <%= link_to "cadastrar-se", new_person_registration_path, class: "button" %>
-                <% end %>
-
-                <% if person_signed_in? %>
                   <div class="navbar-item has-dropdown is-hoverable mr-6 pr-4">
-                    <a class="navbar-item has-text-white" style="margin-top: 10px; padding-top: 0; padding-bottom: 0;">
+                    <a class="navbar-item has-text-white profile-button">
                       <%= current_person.first_name if current_person.present?  %>
                     </a>
                     <div class="navbar-dropdown">
@@ -47,6 +40,9 @@
                         <%= link_to "Sair", destroy_person_session_path, method: :delete, class: "navbar-item" %>
                     </div>
                   </div>
+                <% else %>
+                  <%= link_to "Entrar", new_person_session_path, class: "has-text-white mr-4" %>
+                  <%= link_to "cadastrar-se", new_person_registration_path, class: "button" %>
                 <% end %>
               </div>
             <div>

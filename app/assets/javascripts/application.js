@@ -20,5 +20,5 @@
 $(function() {
   $('.phone').mask('(00) 00000-0000');
   $('.zip').mask('00000-000 ');
-  $(".birthdate").mask('00/00/0000')
+  $('.birthdate').mask('00/00/0000')
 });

@@ -8,8 +8,6 @@
     <%= f.input :breed, input_html: { placeholder: "Digite a raça do seu Amiguinho" } %>
     <%= f.input :birthdate, as: :string, input_html: {class: "birthdate", placeholder: "Digite a data de Nascimento do seu Amiguinho" } %>
     <%= f.file_field :photografy, class: "mb-2", required: true %>
-    <h1 class="mt-3">Escolher dono</h1>
-    <p><%= f.association :person %></p>  
   </div>
 
   <div class="form-actions">

@@ -4,7 +4,11 @@ class PetRegistrationsController < ApplicationController
   # GET /pet_registrations
   # GET /pet_registrations.json
   def index
-    @pet_registrations = PetRegistration.all
+    if params[:search].present?
+      @pet_registrations = PetRegistration.where('code like ? or name like ?', params[:search], "#{params[:search]}%")
+    else
+      @pet_registrations = PetRegistration.all
+    end
   end
 
   # GET /pet_registrations/1
@@ -42,7 +46,7 @@ class PetRegistrationsController < ApplicationController
   def update
     respond_to do |format|
       if @pet_registration.update(pet_registration_params)
-        format.html { redirect_to @pet_registration, notice: 'Pet registration was successfully updated.' }
+        format.html { redirect_to pet_registration_url(pet_registration_params), notice: 'Pet registration was successfully updated.' }
         format.json { render :show, status: :ok, location: @pet_registration }
       else
         format.html { render :edit }
@@ -69,6 +73,6 @@ class PetRegistrationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_registration_params
-      params.require(:pet_registration).permit(:name, :kind, :breed, :birthdate, :person_id, :photografy)
+      params.require(:pet_registration).permit(:name, :kind, :breed, :birthdate, :person_id, :photografy).merge(person_id: current_person.id)
     end
 end

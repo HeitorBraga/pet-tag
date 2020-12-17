@@ -1,10 +1,17 @@
+
+
+
+<p class="has-text-right">
+  <%= form_tag({ action: action_name }, method: 'GET') do %>
+    <%= text_field_tag 'search', params['search'], placeholder: 'Digite o código do pet...' %>
+    <%= submit_tag  'Pesquisar', class: "is-info pt-1 pb-1" %>
+  <% end %>
+</p> 
 <p id="notice"><%= notice %></p>
 
 <section class="section">
   <div class="container">
-
     <h1 class="title has-text-centered">Pets</h1>
-
     <table class="mt-6 table is-fullwidth">
       <thead>
         <tr class="has-text-centered">
@@ -13,9 +20,7 @@
           <th>Tipo</th>
           <th>Raça</th>
           <th>Nascimento</th>
-          <th>Dono
-          </th>
-          <th colspan="3"></th>
+          <th>Dono</th>
         </tr>
       </thead>
 
@@ -28,8 +33,6 @@
             <td><%= pet_registration.breed %></td>
             <td><%= pet_registration.birthdate %></td>
             <td><%= pet_registration.person.name %></td>
-            <td><%= link_to "Editar", edit_pet_registration_path(pet_registration), class: "button is-info" %></td>
-            <td><%= link_to "Exculir", pet_registration, method: :delete, data: { confirm: "Tem certeza?" }, class: "button is-info" %></td>
           </tr>
         <% end %>
       </tbody>
