@@ -4,21 +4,12 @@
 
   <div class="form-inputs">
     <h1 class="title has-text-centered mt-3">Dados de Login</h1>
+    <%= f.input :name %>
+    <%= f.input :telephone, as: :string, input_html: { class: "phone" } %>
     <%= f.input :email %>
     <%= f.input :password %>
     <%= f.input :password_confirmation %>
-    <h1 class="title has-text-centered mt-3">Dados</h1>
-    <%= f.input :name %>
-    <%= f.input :telephone, as: :string, input_html: { class: "phone" } %>
-    <%= f.input :address %>
-    <%= f.input :number %>
-    <%= f.input :complement %>
-    <%= f.input :district %>
-    <%= f.input :zip, as: :string, input_html: { class: "zip" } %>
-    <%= f.input :city %>
-  </div>
-
   <div class="form-actions">
-    <%= f.button :submit, class: "is-fullwidth is-info mt-4" %>
+    <%= f.button :submit, "Enviar", class: "is-fullwidth is-info mt-4" %>
   </div>
 <% end %>

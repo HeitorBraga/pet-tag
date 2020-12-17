@@ -5,7 +5,7 @@
     <div class="column">    
       <nav class="navbar is-info" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <b class="logo ml-4" style="margin-top: 21px;">Pet Tag </b>
+          <b class="logo">Pet Tag </b>
         </div>
           
         <div id="navbarBasicExample" class="navbar-menu">
@@ -27,12 +27,6 @@
             <div class="navbar-item">
               <div class="buttons">
                 <% if person_signed_in? %>
-                  <div>
-                    <%= link_to 'javascript:', onclick: "toggleCartDlg()", class: "mr-4 fa-2x cart-button modal-button" do %>
-                      <%= fa_icon "shopping-cart" %>
-                    <% end %>
-                  </div>
-                  
                   <div class="navbar-item has-dropdown is-hoverable mr-6 pr-4">
                     <a class="navbar-item has-text-white profile-button">
                       <%= current_person.first_name if current_person.present?  %>

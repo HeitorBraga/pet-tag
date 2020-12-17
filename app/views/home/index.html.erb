@@ -8,72 +8,173 @@
 
 <section class="section">
   <div class="container">
-      <h1 class="title has-text-centered mt-6">Como funciona?</h1>
-      <h3 class="has-text-centered mb-5 ">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Sed quis venenatis purus. 
-        Cras at mi porta, mattis quam a, auctor tortor. 
-        Quisque posuere viverra erat in facilisis. 
-        Phasellus id iaculis est. 
-        Nam suscipit metus ac urna viverra malesuada. 
-        Sed non nulla ut velit tincidunt rutrum. 
-        Sed condimentum rutrum augue ut porta. 
-        Vivamus nec nibh at lectus tempus accumsan. 
-        Nunc vel risus ut ex bibendum bibendum quis sed elit. 
-        Nulla id hendrerit purus. Suspendisse ac efficitur ligula. 
-        Aenean quam ipsum, cursus vitae tristique vitae, facilisis rutrum metus. 
-        Aliquam commodo volutpat ante, non bibendum justo viverra eu. 
-        Etiam purus eros, consectetur et egestas ornare, luctus id erat. 
-      </h3>
+    <div class="columns mb-6">
+      <div class="column">
+        <h1 class="title has-text-centered mt-6">Como funciona?</h1>
+        <h3 class="has-text-centered mb-5 ">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Sed quis venenatis purus. 
+          Cras at mi porta, mattis quam a, auctor tortor. 
+          Quisque posuere viverra erat in facilisis. 
+          Phasellus id iaculis est. 
+          Nam suscipit metus ac urna viverra malesuada. 
+          Sed non nulla ut velit tincidunt rutrum. 
+          Sed condimentum rutrum augue ut porta. 
+          Vivamus nec nibh at lectus tempus accumsan. 
+          Nunc vel risus ut ex bibendum bibendum quis sed elit. 
+          Nulla id hendrerit purus. Suspendisse ac efficitur ligula. 
+          Aenean quam ipsum, cursus vitae tristique vitae, facilisis rutrum metus. 
+          Aliquam commodo volutpat ante, non bibendum justo viverra eu. 
+          Etiam purus eros, consectetur et egestas ornare, luctus id erat.</h3>
+
+    <div class="columns mt-6">
+      <div class="column">
+
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <%= image_tag "img.jpg", class: "" %>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4 has-text-centered">Cadastre-se</p>
+              </div>
+            </div>
+
+            <div class="content has-text-centered">
+              Coloque alguns dados e faça seu cadastro.
+              <br>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  
+      <div class="column">
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <%= image_tag "img.jpg", class: "" %>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4 has-text-centered">Cadastre seu Pet</p>
+              </div>
+            </div>
+
+            <div class="content has-text-centered">
+              Coloque alguns dados do seu amiguinho e faça o cadastre-o.
+              <br>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      <div class="column">
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <%= image_tag "img.jpg", class: "" %>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4 has-text-centered">Imprima sua Tag</p>
+              </div>
+            </div>
+
+            <div class="content has-text-centered">
+              Imprima a tag que vamos te enviar e plastifique-a.
+              <br>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="column">
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <%= image_tag "img.jpg", class: "" %>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4 has-text-centered">Coloque na Coleira</p>
+              </div>
+            </div>
+
+            <div class="content has-text-centered">
+              Coloque a tag plastificada na coleira do seu amiguinho.
+              <br>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <% if person_signed_in? %>
+      <%= link_to "Cadastrar Pet", new_pet_registration_url, class: "button is-info is-fullwidth is-medium" %>
+    <% else %>
+      <%= link_to "Tenho interesse", new_person_registration_url, class: "button is-info is-fullwidth is-medium" %>
+    <% end %>
+
   </div>
 </section>
 
-<div class="modal" id="cart">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <!-- Any other Bulma elements you want -->
-  </div>
-  <button class="modal-close is-large" aria-label="close" onClick="toggleCartDlg()"></button>
+<!--useless now-->
+<div class="guard">
+  <section class="section">
+    <div class="container">
+      <h1 class=" title has-text-centered mt-6">Produtos</h1>
+      <h1 class="title has-text-centered mt-6">Tags</h1>
+      <div class="columns">
+        <div class="column mr-6">
+          <h3 class="has-text-centered">TAG NAME</h3>
+          <%= image_tag "tag.jpg" %>
+        </div>
+        <div class="column ml-6">
+          <h3 class="has-text-centered">TAG NAME</h3>
+          <%= image_tag "tag.jpg" %>
+        </div>
+      </div>
+      <%= link_to "Encomendar TAG", root_url, class: "button is-info is-fullwidth is-medium mt-4" %>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered mt-5 mb-6">Coleiras</h1>
+      <div class="columns">
+        <div class="column mt-5">
+          <h3 class="has-text-centered">COLLAR NAME</h3>
+          <%= image_tag "collar1.png", class: "mt-6" %>
+        </div>
+        <div class="column mt-5">
+          <h3 class="has-text-centered">COLLAR NAME</h3>
+          <%= image_tag "collar2.png", class: "mt-6" %>
+        </div>
+        <div class="column mt-5">
+          <h3 class="has-text-centered">COLLAR NAME</h3>
+          <%= image_tag "collar3.webp", class: "mt-6" %>
+        </div>
+      </div>
+      <%= link_to "Encomendar Coleira", root_url, class: "button is-info is-fullwidth is-medium mt-4" %>
+    </div>
+  </section>
 </div>
-
-<section class="section">
-  <div class="container">
-    <h1 class=" title has-text-centered mt-6">Produtos</h1>
-    <h1 class="title has-text-centered mt-6">Tags</h1>
-    <div class="columns">
-      <div class="column mr-6">
-        <h3 class="has-text-centered">TAG NAME</h3>
-        <%= image_tag "tag.jpg" %>
-      </div>
-      <div class="column ml-6">
-        <h3 class="has-text-centered">TAG NAME</h3>
-        <%= image_tag "tag.jpg" %>
-      </div>
-    </div>
-    <%= link_to "Encomendar TAG", root_url, class: "button is-info is-fullwidth is-medium mt-4" %>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h1 class="title has-text-centered mt-5 mb-6">Coleiras</h1>
-    <div class="columns">
-      <div class="column mt-5">
-        <h3 class="has-text-centered">COLLAR NAME</h3>
-        <%= image_tag "collar1.png", class: "mt-6" %>
-      </div>
-      <div class="column mt-5">
-        <h3 class="has-text-centered">COLLAR NAME</h3>
-        <%= image_tag "collar2.png", class: "mt-6" %>
-      </div>
-      <div class="column mt-5">
-        <h3 class="has-text-centered">COLLAR NAME</h3>
-        <%= image_tag "collar3.webp", class: "mt-6" %>
-      </div>
-    </div>
-    <%= link_to "Encomendar Coleira", root_url, class: "button is-info is-fullwidth is-medium mt-4" %>
-  </div>
-</section>
+<!--useless now-->
 
 <% if person_signed_in? %>
 
