@@ -34,3 +34,8 @@ div.control.select {
   background-image: url("home_background.png");
   background-repeat: no-repeat;
 }
+
+.logo {
+  margin-top: 26px;
+  margin-left: 26px;
+}
