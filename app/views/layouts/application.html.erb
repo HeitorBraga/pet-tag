@@ -6,13 +6,42 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
   </head>
 
   <body>
     <%= render partial: "layouts/navbar" %>
+
+    <% if person_signed_in? %>
+      <% if current_person.address == nil %>
+        <div class="has-text-centered columns" id="hidden">
+          <div class="column">
+          </div>
+
+          <div class="column">
+            <div class= "box">
+              <article class="media">
+                <div class="media-content">
+                  <div class="content">
+                    <strong>Vamos finalizar seu cadastro?</strong>
+                    <p>Você precisa nos fornecer apenas alguns dados e já poderá cadastrar seu pet!</p>
+                    <%= link_to 'Finalizar cadastro', root_url, class: 'button is-info mr-3' %>
+                    <%= link_to "Deixar para depois", 'javascript:', onclick: 'function(hidden)', class: 'button is-info'%>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="column">
+          </div>
+        </div>
+      <% end %>
+    <% end %>
 
     <%= yield %>
 

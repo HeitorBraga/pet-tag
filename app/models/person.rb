@@ -3,7 +3,7 @@ class Person < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :name, :email, :password, :password_confirmation, :telephone, :address, :number, :complement, :district, :zip, :city, presence: true
+  validates :name, :email, :password, :password_confirmation, :telephone, presence: true
   
   has_many :pet_registrations
 

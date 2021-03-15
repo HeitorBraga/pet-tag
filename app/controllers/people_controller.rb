@@ -61,10 +61,10 @@ class PeopleController < ApplicationController
   # DELETE /people/1
   # DELETE /people/1.json
   def destroy
-    @person.destroy
-    respond_to do |format|
-      format.html { redirect_to people_url, notice: 'Dono excluido com sucesso.' }
-      format.json { head :no_content }
+    @person = Person.find(params[:id])
+
+    if @person.destroy
+      redirect_to root_url, notice: "User deleted"
     end
   end
 

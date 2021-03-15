@@ -2,6 +2,7 @@
   "name": "pets",
   "private": true,
   "dependencies": {
+    "@zxing/library": "^0.18.3",
     "jquery-mask-plugin": "^1.14.16"
   }
 }

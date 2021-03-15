@@ -2,11 +2,12 @@ class PetRegistration < ApplicationRecord
   CHARS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
   
   belongs_to :person
+
   has_one_attached :photografy
 
   validates :name, :kind, :breed, :birthdate, :photografy, :person, presence: true
 
-  enum kind: { dog: 0, cat: 1, rabbit: 2 }
+  enum kind: { dog: "Cachorro", cat: "Gato", rabbit: "rabbit" }
 
   before_save do
     if code.blank?
@@ -16,5 +17,14 @@ class PetRegistration < ApplicationRecord
 
       self.code = _code.gsub(/(\w{3})(\w{3})/, '\1-\2')
     end
+  end
+
+  def gerar_codigo
+    self.codigo = SecureRandom.hex
+    save
+  end
+
+  def first_name
+    name.split(' ').first
   end
 end

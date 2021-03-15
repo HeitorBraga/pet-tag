@@ -1,0 +1,134 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+
+.logo {
+  margin-top: 26px;
+  margin-left: 26px;
+  margin-right: 8px;
+  padding-right: 12px;
+}
+
+div.control.select   {
+  height: 72px;
+}
+.select2.select2-container   {
+  width: 100% !important;
+}
+
+.home-background  {
+  margin-right: 0;
+  background-image: url("home_background.png");
+  background-repeat: no-repeat;
+}
+
+.logo {
+  margin-top: 26px;
+  margin-left: 26px;
+}
+
+thead th  {
+  background: rgb(255, 255, 255);
+}
+
+tbody tr  {
+  background: rgb(255, 255, 255);
+}
+
+tr:hover .table-button   {
+  display: inline-block !important;
+  background-color: transparent;
+}
+
+.table-button   {
+  display: none !important;
+  font-size: 18px;
+  padding: 0px 10px;
+}
+
+.profile-button {
+  margin-top: 10px;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.profile-button:hover  {
+  background-color: transparent !important;
+}
+
+.servico-button  {
+  width: 16.5rem !important; 
+  margin-top: 5rem;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+.background-isinfo {
+  background-color: #2793da;
+}
+
+.table-links:hover {
+  background-color: transparent !important;
+}
+
+.cart-button:hover {
+  background-color: transparent !important;
+}
+
+.guard {
+  display: none;
+}
+
+.profile-photo {
+  margin-left: 60px;
+}
+
+.seletor-square {
+  width: 0;
+  height: 0;
+  border: 15px solid;
+  border-color: red;
+  margin: 0 0 0 10px;
+}
+
+.lozenge-tag {
+  height: 300px;
+  width: 300px;
+  background-image: image-url("lozenge.png");
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+.tag-txt {
+  margin: 0 15px 0 0;
+  font-size: 30px !important;
+}
+
+.name-tag {
+  padding: 75px 0 0 0 ;
+}
+
+.code-tag {
+  padding: 80px 0 0 0;
+}
+
+.navbar-search {
+  margin: 0 530px 0 0 !important;
+}
+
+.hidden {
+  opacity: 0;
+}

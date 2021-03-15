@@ -59,12 +59,25 @@
       <%= @person.city %>
     </h2></p>
 
-    <div class="modal" id="modal-active">
-      <div class="modal-background"></div>
-      <div class="modal-content">
 
+    <div class="modal" id="modalTag">
+      <div class="modal-background"></div>
+      <div class="modal-card">  
+        <header class="modal-card-head">
+          <p class="modal-card-title has-text-centered title">Tag</p>
+        </header>
+        <p class="tag">
+          <tbody>
+            <% current_person.pet_registrations.each do |pet_tag| %>
+              <tr class="has-text-centered">
+                <td><%= pet_tag.name %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </p>
       </div>
       <button class="modal-close is-large" arial-label="close" onClick="toggleCartDlg()"></button>
+    </div>
 
     <h1 class="title mt-5 has-text-centered">Pets</h1>
 
@@ -78,13 +91,28 @@
                   <th>Código</th>
                   <th>Nome</th>
                   <th>Raça</th>
+                  <th width="173.5px"></th>
                 </thead>
                 <tbody>
                   <% current_person.pet_registrations.each do |pet| %>
                     <tr class="table has-text-centered">
-                      <td><h4><%= link_to pet.code, pet %></td></h4>
-                      <td><h4><%= link_to pet.name, pet %></td></h4>
-                      <td><h4><%= link_to pet.breed, pet %></td></h4>
+                      <td><h4><%= pet.code %></td></h4>
+                      <td><h4><%= pet.name %></td></h4>
+                      <td><h4><%= pet.breed %></td></h4>
+                      <td>
+                        <%= link_to edit_pet_registration_url(pet), class: "table-button" do %>
+                          <%= fa_icon "pencil" %>
+                        <% end %>
+                        <%= link_to pet, class: "table-button" do %>
+                          <%= fa_icon "eye" %>
+                        <% end %>
+                        <%= link_to pet_registration_path(pet), method: :delete, data: { confirm: "Tem certeza?" }, class: "table-button" do %>
+                          <%= fa_icon "trash" %>
+                        <% end %>
+                         <%= link_to print_tag_pet_registration_path(pet), class: "table-button modal-button" do %>
+                          <%= fa_icon "tag" %>
+                        <% end %>
+                    </td>
                     </tr>
                   <% end %>
                 </tbody>

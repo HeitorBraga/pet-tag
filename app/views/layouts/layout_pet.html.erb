@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pets</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <div class="columns">
+      <div class="column">    
+        <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+
+            <b class="logo">Pet Tag</b>
+
+          </div>
+            
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+              <% if person_signed_in? %>
+                <%= link_to "Home", root_url, class: 'navbar-item mr-2 ml-2' %>
+          
+                <%= link_to "Dono", people_url, class: "navbar-item mr-2 ml-2" %>
+
+                <%= link_to "Pet", pet_registrations_url, class: "navbar-item mr-2 ml-2" %>
+
+              <% else %>
+                <%= link_to "Home", root_url, class: 'navbar-item mr-2 ml-2' %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="navbar-search navbar-item">
+            <%= form_tag({ action: action_name }, method: 'GET') do %>
+              <%= text_field_tag 'search', params['search'], placeholder: 'Digite o código do pet...' %>
+              <%= submit_tag  'Pesquisar', class: "is-info pt-1 pb-1" %>
+            <% end %>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <% if person_signed_in? %>
+                  <div class="navbar-item has-dropdown is-hoverable mr-6 pr-4">
+                    <a class="navbar-item has-text-white profile-button">
+                      <%= current_person.first_name if current_person.present?  %>
+                    </a>
+                    <div class="navbar-dropdown">
+                      <%= link_to 'perfil', person_profile_url, class: 'navbar-item' %>
+                      
+                      <%# link_to 'Editar Perfil', , class: "navbar-item" %>
+                      <hr class="navbar-divider">
+                        <%# link_to "Editar Perfil", , class: "navbar-item" %>
+                        <%= link_to "Sair", destroy_person_session_path, method: :delete, class: "navbar-item" %>
+                    </div>
+                  </div>
+                <% else %>
+                  <%= link_to "Entrar", new_person_session_path, class: "has-text-white mr-4" %>
+                  <%= link_to "cadastrar-se", new_person_registration_path, class: "button" %>
+                <% end %>
+              </div>
+            <div>
+          </div>
+        </nav> 
+      </div>
+    </div >
+    <!-- NAVBAR END -->
+
+    <%= yield %>
+
+    <%= render partial: "layouts/footer" %>
+  </body>
