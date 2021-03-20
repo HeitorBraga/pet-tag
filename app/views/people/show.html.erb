@@ -90,15 +90,18 @@
                 <thead class="has-text-centered">
                   <th>Código</th>
                   <th>Nome</th>
+                  <th>Tipo</th>
                   <th>Raça</th>
-                  <th width="173.5px"></th>
+                  <th width="174.7px"></th>
                 </thead>
                 <tbody>
                   <% current_person.pet_registrations.each do |pet| %>
                     <tr class="table has-text-centered">
                       <td><h4><%= pet.code %></td></h4>
                       <td><h4><%= pet.name %></td></h4>
+                      <td><h4><%= pet.kind %></td></h4>
                       <td><h4><%= pet.breed %></td></h4>
+
                       <td>
                         <%= link_to edit_pet_registration_url(pet), class: "table-button" do %>
                           <%= fa_icon "pencil" %>

@@ -1,3 +1,5 @@
+require 'rqrcode'
+
 class PetRegistrationsController < ApplicationController
   before_action :set_pet_registration, only: [:show, :edit, :update, :destroy, :print_tag]
 
@@ -15,6 +17,17 @@ class PetRegistrationsController < ApplicationController
   end
 
   def print_tag
+    qrcode = RQRCode::QRCode.new("http://github.com/")
+
+    # NOTE: showing with default options specified explicitly
+    @svg = qrcode.as_svg(
+      offset: 0,
+      color: 'fff',
+      shape_rendering: 'crispEdges',
+      module_size: 5,
+      standalone: true
+    )
+
     render layout: 'blank'
   end
   # GET /pet_registrations/1

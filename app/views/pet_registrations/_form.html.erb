@@ -4,7 +4,7 @@
     
   <div class="form-inputs">
     <%= f.input :name, input_html: { placeholder: "Digite o nome do seu Amiguinho" } %>
-    <%= f.input :kind, collection: PetRegistration.kinds, input_html: { placeholder: "Ex.: Cachorro" } %>
+    <%= f.input :kind, collection: PetRegistration.kinds, input_html: { class: "is-fullwidth" } %>
     <%= f.input :breed, input_html: { placeholder: "Digite a raça do seu Amiguinho" } %>
     <%= f.input :birthdate, as: :string, input_html: {class: "birthdate", placeholder: "Digite a data de Nascimento do seu Amiguinho" } %>
     <%= f.file_field :photografy, class: "mb-2", required: true %>

@@ -104,25 +104,39 @@ tr:hover .table-button   {
   margin: 0 0 0 10px;
 }
 
-.lozenge-tag {
+.circle-tag {
   height: 300px;
   width: 300px;
-  background-image: image-url("lozenge.png");
-  background-repeat: no-repeat;
-  margin: 0 auto;
-}
-
-.tag-txt {
-  margin: 0 15px 0 0;
-  font-size: 30px !important;
+  border-radius: 50%;
+  margin: 20px auto;
+  background: #3298dc;
+  -webkit-print-color-adjust: exact;
 }
 
 .name-tag {
-  padding: 75px 0 0 0 ;
+  font-size: 50px;
+  position: relative;
+  top: 35px;
+  color: white;
 }
 
 .code-tag {
-  padding: 80px 0 0 0;
+  font-size: 30px;
+  position: relative;
+  top: 80px;
+  color: white;
+}
+
+.link-tag {
+  font-size: 25px;
+  position: relative;
+  top: 130px;
+  color: white;
+}
+
+.qrcode {
+  position: relative;
+  top: 65px;
 }
 
 .navbar-search {
@@ -132,3 +146,26 @@ tr:hover .table-button   {
 .hidden {
   opacity: 0;
 }
+
+div.select {
+  display: block;
+}
+label.select {
+  height: 24px !important;
+}
+div.select.control::after,
+label.select::after {
+  content: none !important;
+}
+
+.button-registration-navbar {
+  color: #3298dc !important;
+}
+.button-registration-navbar:hover {
+  background-color: white !important;
+}
+
+.button-login-navbar:hover {
+  background-color: transparent;
+}
+

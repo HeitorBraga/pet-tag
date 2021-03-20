@@ -4,7 +4,7 @@
 
   <div class="form-inputs">
     <h1 class="title has-text-centered mt-3">Dados de Login</h1>
-    <%= f.input :name %>
+    <%= f.input :name, input_html: { autofocus: "autofocus" }%>
     <%= f.input :telephone, as: :string, input_html: { class: "phone", placeholder: " (xx) xxxxx-xxxx" } %>
     <%= f.input :email, input_html: { placeholder: " example@gmail.com"} %>
     <%= f.input :password %>

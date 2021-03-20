@@ -1,12 +1,19 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "print" %>
+<% end %>
+
 <h1 class="title has-text-centered">TAG</h1>
 
-<section class="section">
-  <div class="container">
-    <div class="lozenge-tag">
-      <div class="tag-txt has-text-centered">
-        <p class="name-tag title"> <%= @pet_registration.first_name %> </p>
-          <%= @result %>
-        <p class="code-tag"> <%= @pet_registration.code %> </p>
-    </div>
+<div class="circle-tag">
+  <div class="has-text-centered">
+    <p class="name-tag"> <b><%= @pet_registration.first_name %></b> </p>
+    <p class="qrcode"><%= @svg.html_safe %></p>
+    <p class="code-tag"> <%= @pet_registration.code %> </p>
   </div>
-</section>
+</div>
+
+<div class="circle-tag">
+  <div class="has-text-centered">
+    <p class="link-tag"><b>https://pet-tag.com.br</b>
+  </div>
+</div>
