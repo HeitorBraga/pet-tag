@@ -17,14 +17,14 @@ class PetRegistrationsController < ApplicationController
   end
 
   def print_tag
-    qrcode = RQRCode::QRCode.new("http://github.com/")
+    qrcode = RQRCode::QRCode.new(pet_registration_url(@pet_registration))
 
     # NOTE: showing with default options specified explicitly
     @svg = qrcode.as_svg(
       offset: 0,
       color: 'fff',
       shape_rendering: 'crispEdges',
-      module_size: 5,
+      module_size: 4.6,
       standalone: true
     )
 

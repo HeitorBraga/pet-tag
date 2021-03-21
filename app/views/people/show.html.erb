@@ -125,8 +125,17 @@
         </div>
       </article>
   </div>
-  <%= link_to "Cadastrar Amiguinho", new_pet_registration_url, class: "button is-info is-fullwidth" %>
-  <%= link_to "Editar Perfil", edit_person_path(@person), class: "button is-info is-fullwidth mt-3" %>
+
+  <% if current_person.address.nil? %>
+    <div class="tooltip">
+      <button class="button is-info is-fullwidth button-tooltip" disabled>Cadastrar Amiguinho</button>
+      <span class="tooltiptext"><%= link_to "Você precisa concluir seu cadastro para poder cadastrar um pet", edit_person_path(current_person), class: "tooltip-link" %></span>
+    </div>
+    
+  <% else %>
+    <%= link_to "Cadastrar Amiguinho", new_pet_registration_url, class: "button is-info is-fullwidth" %>
+  <% end %>
+  <%= link_to "Editar Perfil", edit_person_path(current_person), class: "button is-info is-fullwidth mt-3" %>
 
   </div>
 

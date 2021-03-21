@@ -4,11 +4,18 @@
 
   <div class="form-inputs">
     <h1 class="title has-text-centered mt-3">Dados de Login</h1>
-    <%= f.input :name, input_html: { autofocus: "autofocus" }%>
+    <%= f.input :name, input_html: { placeholder: "Your name", autofocus: "autofocus" }%>
     <%= f.input :telephone, as: :string, input_html: { class: "phone", placeholder: " (xx) xxxxx-xxxx" } %>
     <%= f.input :email, input_html: { placeholder: " example@gmail.com"} %>
     <%= f.input :password %>
     <%= f.input :password_confirmation %>
+    <h1 class="title has-text-centered mt-6">Endereço</h1>
+    <%= f.input :address, input_html: { placeholder: "Seu endereço" } %>
+    <%= f.input :number, input_html: { placeholder: "Número de sua residencia" } %>
+    <%= f.input :complement, input_html: { placeholder: "A quadra e lote da sua residência" } %>
+    <%= f.input :district, input_html: { placeholder: "Seu bairro"} %>
+    <%= f.input :zip, input_html: { placeholder: "Cep da sua cidade" } %>
+    <%= f.input :city, input_html: { placeholder: "Nome da sua cidade" }%>
   </div>
   
   <div class="form-actions">

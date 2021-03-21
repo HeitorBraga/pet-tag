@@ -123,7 +123,7 @@ tr:hover .table-button   {
 .code-tag {
   font-size: 30px;
   position: relative;
-  top: 80px;
+  top: 60px;
   color: white;
 }
 
@@ -136,7 +136,7 @@ tr:hover .table-button   {
 
 .qrcode {
   position: relative;
-  top: 65px;
+  top: 55px;
 }
 
 .navbar-search {
@@ -169,3 +169,74 @@ label.select::after {
   background-color: transparent;
 }
 
+.complete-profile-text {
+  font-size: medium;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted transparent; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #3298dc;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 40%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #3298dc transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.button-tooltip {
+  width: 830px !important;
+}
+
+.tooltip-link {
+  color: white !important;
+}
+
+.tooltip-link:hover {
+  color: white;
+  background-color: transparent;
+}
+
+.footer-text {
+  font-size: 14px;
+  color: #fff;
+}
+
+.footer {
+  background-color: #3298dc !important;
+}
