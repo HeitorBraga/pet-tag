@@ -140,11 +140,12 @@ tr:hover .table-button   {
 }
 
 .navbar-search {
-  margin: 0 530px 0 0 !important;
+  position: relative;
+  right: 10px;
 }
 
 .hidden {
-  opacity: 0;
+  display: none !important;
 }
 
 div.select {
@@ -239,4 +240,19 @@ label.select::after {
 
 .footer {
   background-color: #3298dc !important;
+}
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.section {
+  flex: 1;
+}
+
+.home-space {
+  height: 137.333px;
+  padding: 12px;
 }

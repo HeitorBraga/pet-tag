@@ -13,8 +13,22 @@
     <%= yield :head %>
   </head>
 
-  <body>
+  <body class="main">
     <%= render partial: "layouts/navbar" %>
+
+    <div class="columns">
+      <div class="column"></div>
+
+      <div class="column">
+        <% if flash[:notice].present? %>
+          <div class="notification is-danger is-light has-text-centered">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="column"></div>
+    </div>
 
     <%= yield %>
 

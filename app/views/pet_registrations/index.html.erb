@@ -1,7 +1,13 @@
-<p id="notice"><%= notice %></p>
-
 <section class="section">
   <div class="container">
+
+  <div class="navbar-search navbar-item">
+    <%= form_tag({ action: action_name }, method: 'GET') do %>
+        <%= text_field_tag 'search', params['search'], placeholder: 'Digite o código ou nome do pet...', class: "input" %>
+        <%= submit_tag  'Pesquisar', class: "is-info pt-1 pb-1 button" %>
+    <% end %>
+  </div>
+
     <h1 class="title has-text-centered">Pets</h1>
     <table class="mt-6 table is-fullwidth">
       <thead>

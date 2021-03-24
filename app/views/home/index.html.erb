@@ -1,6 +1,6 @@
 <% if person_signed_in? %>
   <% if current_person.address == nil %>
-    <div class="has-text-centered columns" id="hidden">
+    <div class="has-text-centered columns" id="complete-profile-dialog">
       <div class="column">
       </div>
 
@@ -12,7 +12,7 @@
                 <strong>Vamos finalizar seu cadastro?</strong>
                 <p class="complete-profile-text">Você precisa nos fornecer apenas alguns dados e já poderá cadastrar seu pet!</p>
                 <%= link_to 'Finalizar cadastro', edit_person_path(current_person), class: 'button is-info mr-3' %>
-                <%= link_to "Deixar para depois", 'javascript:hidden()', class: 'button is-info' %>
+                <%= link_to "Deixar para depois", 'javascript:#', onclick: "$('#complete-profile-dialog').hide()", class: 'button is-info' %>
               </div>
             </div>
           </article>
@@ -25,7 +25,7 @@
   <% end %>
 <% end %>
 
-<h1 class="title has-text-centered">Pet Tag</h1>
+<h1 class="title has-text-centered ">Pet Tag</h1>
 
 <div class="columns">
   <div class="column ml-0 has-text-centered home-background is-two-thirds pb-6 pt-6 mb-6">

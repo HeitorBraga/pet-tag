@@ -7,7 +7,6 @@ class PetRegistrationsController < ApplicationController
   # GET /pet_registrations.json
   def index
     @pet_registrations = PetRegistration.all
-    render layout: 'layout_pet'
     
     if params[:search].present?
       @pet_registrations = PetRegistration.where('code like ? or name like ?', params[:search], "#{params[:search]}%")
@@ -37,6 +36,8 @@ class PetRegistrationsController < ApplicationController
 
   # GET /pet_registrations/new
   def new
+    redirect_to edit_person_url(current_person), notice: "Você precisa completar seu cadastro para poder cadastrar um PET" if current_person.address.nil?
+
     @pet_registration = PetRegistration.new
   end
 

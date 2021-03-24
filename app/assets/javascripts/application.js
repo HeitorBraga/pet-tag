@@ -23,6 +23,6 @@ $(function() {
   $('.birthdate').mask('00/00/0000')
 });
 
-function hidden() {
-  $('#hidden').toggleClass('hidden');
+function completeProfileAlert() {
+  alert("Alert");
 }
