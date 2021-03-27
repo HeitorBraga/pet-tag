@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_22_185402) do
+ActiveRecord::Schema.define(version: 2021_03_24_200044) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_12_22_185402) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "UID"
     t.index ["confirmation_token"], name: "index_people_on_confirmation_token", unique: true
     t.index ["email"], name: "index_people_on_email", unique: true
     t.index ["reset_password_token"], name: "index_people_on_reset_password_token", unique: true
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(version: 2020_12_22_185402) do
     t.integer "person_id"
     t.string "code"
     t.string "qrcode"
+    t.string "uid"
     t.index ["person_id"], name: "index_pet_registrations_on_person_id"
   end
 

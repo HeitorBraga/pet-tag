@@ -36,7 +36,7 @@ class PetRegistrationsController < ApplicationController
 
   # GET /pet_registrations/new
   def new
-    redirect_to edit_person_url(current_person), notice: "Você precisa completar seu cadastro para poder cadastrar um PET" if current_person.address.nil?
+    #redirect_to edit_person_url(current_person), notice: "Você precisa completar seu cadastro para poder cadastrar um PET" if current_person.address.nil?
 
     @pet_registration = PetRegistration.new
   end

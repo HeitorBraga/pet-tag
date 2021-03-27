@@ -1,5 +1,4 @@
 class PetRegistration < ApplicationRecord
-  CHARS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
   
   belongs_to :person
 
@@ -9,19 +8,18 @@ class PetRegistration < ApplicationRecord
 
   enum kind: { dog: "Cachorro", cat: "Gato", rabbit: "rabbit" }
 
-  before_save do
-    if code.blank?
-      begin
-        _code = (0...6).collect { CHARS[Kernel.rand(CHARS.length)] }.join
-      end while PetRegistration.find_by_code(_code)
+  before_create :set_code, :set_uid
+  
+  private
 
-      self.code = _code.gsub(/(\w{3})(\w{3})/, '\1-\2')
-    end
+  def set_code
+    begin
+      self.code = SecureRandom.alphanumeric(6).gsub(/(\w{3})(\w{3})/, '\1-\2').upcase
+    end while PetRegistration.find_by_code(self.code)
   end
 
-  def gerar_codigo
-    self.codigo = SecureRandom.hex
-    save
+  def set_uid
+    self.uid = SecureRandom.uuid
   end
 
   def first_name
